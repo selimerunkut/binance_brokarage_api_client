@@ -3,10 +3,8 @@
 <script>
 
     var burl = 'https://api.binance.com';
-    //var endPoint = '/api/v3/account';
-    //var dataQueryString = 'recvWindow=20000&timestamp=' + Date.now();
-    var endPoint = '/api/v3/order';
-    var dataQueryString = "symbol=BTCUSDT&side=BUY&type=LIMIT&timeInForce=GTC&quantity=0.003&price=6200&recvWindow=20000&timestamp=" + Date.now();
+    var endPoint = '/sapi/v1/broker/subAccount';
+    var dataQueryString = "recvWindow=20000&timestamp=" + Date.now();
 
 
     var keys = {
