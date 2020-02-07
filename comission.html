@@ -1,9 +1,12 @@
 <html>
 <script type="text/javascript" src="crypto-js.js"></script>
 <script>
+
     var burl = 'https://api.binance.com';
-    var endPoint = '/sapi/v1/broker/subAccount';
-    var dataQueryString = "recvWindow=20000&timestamp=" + Date.now();
+    var endPoint = '/sapi/v1/broker/subAccountApi/commission';
+    var accountID = 1
+    var extraParams = "subAccountId=" + accountID + "&makerCommission=0.4&takerCommission=0.4&"
+    var dataQueryString = extraParams + "recvWindow=20000&timestamp=" + Date.now();
 
 
     var keys = {
@@ -26,6 +29,11 @@
         console.log(ourRequest.responseText);
     }
     ourRequest.send();
+
+
+
+
+
 </script>
 
 </html>
