@@ -1,0 +1,39 @@
+<html>
+<script type="text/javascript" src="crypto-js.js"></script>
+<script>
+
+    var burl = 'https://api.binance.com';
+    var endPoint = '/sapi/v1/broker/subAccountApi';
+    var accountID = 1
+    var extraParams = "subAccountId=" + accountID + "&canTrade=true&marginTrade=false&futuresTrade=false&"
+    var dataQueryString = extraParams + "recvWindow=20000&timestamp=" + Date.now();
+
+
+    var keys = {
+        'akey': '',
+        'skey': ''
+    }
+
+    var signature = CryptoJS.HmacSHA256(dataQueryString, keys['skey']).toString(CryptoJS.enc.Hex);
+
+    var ourRequest = new XMLHttpRequest();
+
+    var url = burl + endPoint + '?' + dataQueryString + '&signature=' + signature;
+
+    var ourRequest = new XMLHttpRequest();
+
+    ourRequest.open('POST', url, true);
+    ourRequest.setRequestHeader('X-MBX-APIKEY', keys['akey']);
+
+    ourRequest.onload = function () {
+        console.log(ourRequest.responseText);
+    }
+    ourRequest.send();
+
+
+
+
+
+</script>
+
+</html>
