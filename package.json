@@ -4,7 +4,7 @@
   "description": "This package contains the code to call a Signed REST API for Binance exchange.",
   "main": "index.js",
   "dependencies": {
-    "electron": "^8.0.0"
+    "electron": "^8.2.4"
   },
   "devDependencies": {},
   "scripts": {
